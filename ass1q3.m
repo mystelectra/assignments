@@ -12,7 +12,7 @@ ang=randn(1,n)*2*pi;
 m0=9.109e-31;
 mn=0.26*m0;
 T=300;
-k=1.38e-23;
+k=physconst('Boltzman');
 d=1e-18;
 
 vth = sqrt(2*k*T/mn)
