@@ -106,8 +106,6 @@ for i=1:nsteps
 end
 
  
+meanfreepath = mean(path);%??
 
-meanfreepath = mean(path)
-
-Temp = abs(mean(vx)+mean(vy))*mn/(2*k) %why doesn't this work?
 

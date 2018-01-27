@@ -22,16 +22,16 @@ mfpath = L*W/(sqrt(2)*n*pi*d*d)
 x=rand(1,n)*L;
 y=rand(1,n)*W;
 
-%create a bunch of electrons not in the boxes
-%box 1  190e-9<x<210e-9 60e-9<y<100e-9
-%box 2  190e-9<x<210e-9 0<y<40e-9
+% create a bunch of electrons not in the boxes
+% box 1  190e-9<x<210e-9 60e-9<y<100e-9
+% box 2  190e-9<x<210e-9 0<y<40e-9
 Cxlow = 80e-9;
 Cxhigh= 120e-9;
 Cylow =40e-9;
 Cyhigh=60e-9;
 Ibox = (y>Cyhigh | y<Cylow) & x<Cxhigh & x>Cxlow;
 
-%no starting in boxes
+% no starting in boxes
 for a = 1:n
 if (x(a)<Cxhigh && x(a)>Cxlow && (y(a)>Cyhigh || y(a)<Cylow))
     x(a) = rand()*L;
