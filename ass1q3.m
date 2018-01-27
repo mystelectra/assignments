@@ -1,5 +1,3 @@
-%%why are the particles congregating at x=0 and x=L?
-%why are they starting in the boxes?
 close all
 
 L=200e-9;

@@ -34,7 +34,7 @@ for i=1:nsteps
 
     dx=vx*dt;
     dy=vy*dt;
-
+git commit -m "update"
     x=x+dx;
     y=y+dy;
 
