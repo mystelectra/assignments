@@ -16,9 +16,6 @@ k=physconst('Boltzman');
 tau=0.2e-9; %sec
  
 vth = sqrt(2*k*T/mn)
-% d=tau*vf; 
-% (d=mean free path)
-% is fermi velocity the same as thermal velocity? if not, are they related? 
 
 x=rand(1,n)*L;
 y=rand(1,n)*W;
