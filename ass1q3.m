@@ -3,7 +3,9 @@ close all
 L=200e-9;
 W=100e-9;
 n=100; %change
-nsteps =14; %change
+nsteps =1000; %change
+pscat=0.05;
+scatCount= 0;
 
 ang=randn(1,n)*2*pi;
 
@@ -115,6 +117,17 @@ for i=1:nsteps
           vy(a) = -vy(a);
         end
      end %end travelling restrictions loop
+     
+    %scattering
+    if (pscat > rand())
+        q=round(rand())*n;
+        if (q==0)
+            q=1;
+        end
+        vx(q)=vth*rand();
+        vy(q)=vth*rand();
+        scatCount = scatCount+1;
+    end
 
      %ypath calc after boundary adjustment
     ypath=abs(y-yp); 
@@ -123,16 +136,16 @@ for i=1:nsteps
     path = sqrt(xpath.*xpath + ypath.*ypath);    
     
 %     plot(x,y,'o');hold on
-  
-    %plot trajectories
+  figure (1)
+    %plot trajectories 
     for p = 1:10
         plot([x(p); xp(p)],[y(p); yp(p)],'color',col(p,:));  hold on
     end
     xlim([0 L])
     ylim([0 W])
     title ('Monte Carlo Simulation of Electron Trajectories with Bottleneck')
-  
     pause(0.01);
+
       
 end
 
